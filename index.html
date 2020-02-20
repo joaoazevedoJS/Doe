@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- HTML 
+    HYPERTEXT
+        Texto que cotem links para outros documentos.
+    MARKUP 
+        Texo conterá marcações: <tags>
+    LANGUAGE
+        Para me comunicar de certa maneira. Sintaxe específica para escrita.
+-->
+
+<html>
+
+<head>
+    <!-- São configurações da minha página -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Doe sangue! Doe vida!</title>
+</head>
+
+<body>
+    <!--Aqui vem todo conteúdo visível para o usuário, dentro de certa página -->
+    <header>
+        <img class="logo" src="logo.png" alt="Imagem de DOE">
+
+        <h2>A sua doação importa</h2>
+        <p>Até 3 vidas com 1 doação</p>
+        <p>Mais de 38.000 doações são necessárias todos os dias</p>
+        <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+
+        <button>Quero ajudar</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Nome Completo">
+            <input type="text" name="email" placeholder="Email">
+
+            <input type="text" name="blood" placeholder="Tipo sanguíneo">
+
+            <button>Quero ajudar</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+
+        <section class="donors">
+
+            {% for donor in donors %}
+
+                <div class="donor">
+                    <div class="blood">{{ donor.blood }}</div>
+                    <p>{{ donor.name }}</p>
+                </div>
+
+            {%endfor%}
+        </section>
+    </main>
+
+    <footer> Com Amor 😍 DOE.</footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
